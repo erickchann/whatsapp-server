@@ -1,4 +1,3 @@
-
 # Baileys Restful API with Laravel
 An implementation of [@adiwajshing/Baileys](https://github.com/adiwajshing/Baileys) as a simple RESTful API service with multiple device support.
 
@@ -21,8 +20,6 @@ git clone https://github.com/erickchann/whatsapp-server.git
 2. Enter directory project `cd backend-laravel`
 3. Execute `composer install` to install the dependencies.
 4. Setting the database configuration, rename `.env.example` to `.env` and open file at project root directory or execute `cp .env.example .env`
-```bash
-```
 5. Setting the URL backend server configuration, open `.env` file at project root directory
 ```bash
 URL_WA_SERVER=http://localhost:8000
