@@ -53,7 +53,7 @@ The server will respond in JSON format:
 ```
 
 ### Features
-- [ ] Send Chat (Beta)
+- [x] Send Chat (Beta)
 - [ ] Send Chat Brodcast (In Development)
 - [ ] Send Chat to group (Soon)
 - [ ] Get Conversation (Soon)
