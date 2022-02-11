@@ -1,36 +1,25 @@
 <template>
   <div class="home">
-    <h1>Berhasil Connect</h1>
-
-    <form @submit.prevent="sendMessage">
-      <input type="number" placeholder="Number" v-model="formData.number">
-      <input type="text" placeholder="Message" v-model="formData.message">
-
-      <button type="submit">Send</button>
-    </form>
+    <router-link to="/add-device" class="btn btn-primary mb-2">Add Device</router-link>
+    <router-link to="/add-device" class="btn btn-warning mb-2">Device List</router-link>
+    <router-link to="/add-device" class="btn btn-success mb-2">Send Chat</router-link>
+    <router-link to="/add-device" class="btn btn-info mb-2">Send Brodcast</router-link>
   </div>
 </template>
 
-<script>
-import axios from 'axios'
+<style scoped>
 
-export default {
-  data() {
-    return {
-      formData: {
-        number: '',
-        message: '',
-        id: 'erick'
-      }
-    }
-  },
-  methods: {
-    sendMessage() {
-      axios.post(`chat/send`, this.formData)
-        .then(res => {
-          console.log(res.data);
-        })
-    }
-  },
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-</script>
+
+.home .btn {
+  width: 40%;
+}
+
+</style>

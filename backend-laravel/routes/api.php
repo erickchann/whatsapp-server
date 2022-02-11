@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BaileysController;
+use App\Http\Controllers\DeviceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('session/add', [BaileysController::class, 'createNewSession']);
-Route::post('chat/send', [BaileysController::class, 'sendMessage']);
+Route::group(['prefix' => 'wahatsapp'], function () {
+    Route::post('session/add', [BaileysController::class, 'createNewSession']);
+    Route::post('chat/send', [BaileysController::class, 'sendMessage']);
+});
+
+Route::apiResource('device', DeviceController::class);

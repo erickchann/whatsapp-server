@@ -20,11 +20,20 @@ git clone https://github.com/erickchann/whatsapp-server.git
 2. Enter directory project `cd backend-laravel`
 3. Execute `composer install` to install the dependencies.
 4. Setting the database configuration, rename `.env.example` to `.env` and open file at project root directory or execute `cp .env.example .env`
+```bash
+DB_DATABASE=**your_db_name**
+DB_USERNAME=**your_db_user**
+DB_PASSWORD=**password**
+```
 5. Setting the URL backend server configuration, open `.env` file at project root directory
 ```bash
 URL_WA_SERVER=http://localhost:8000
 ```
-6. Run laravel
+6. Run the following command at the terminal:
+```bash
+php artisan migrate:fresh --seed
+```
+7. Run laravel
 ```bash
 php artisan serve --port=3000
 ```

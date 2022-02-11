@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <img v-if="qrUrl" :src="qrUrl" />
+
+    <button type="button" class="btn btn-primary">Next</button>
   </div>
 </template>
 
@@ -11,8 +13,6 @@ export default {
   data() {
     return {
       qrUrl: '',
-      qrlInterval: '',
-			stopReq: false
     }
   },
   methods: {
@@ -20,7 +20,6 @@ export default {
       axios.post(`/session/add`, { id: 'erick' })
         .then(res => {
           if (res.data == 'berhasil') {
-						this.stopReq = true;
             this.$router.push({ name: 'Home' });
           } else {
             this.qrUrl = res.data;
@@ -30,15 +29,6 @@ export default {
   },
   created() {
     this.getQr();
-
-    // this.qrlInterval = setInterval(() => {
-		// 	if (!this.stopReq) {
-	  //     this.getQr();
-		// 	}
-    // }, 7000);
-  },
-  destroyed() {
-    // clearInterval(this.qrlInterval);
   },
 }
 </script>

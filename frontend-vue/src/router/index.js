@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Scan',
-    component: () => import('@/views/Scan.vue')
+    name: 'Home',
+    component: () => import('@/views/Home.vue')
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: Home
+    path: '/add-device',
+    name: 'AddDevice',
+    component: () => import('@/views/AddDevice.vue')
   },
 ]
 
