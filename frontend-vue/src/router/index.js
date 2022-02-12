@@ -14,6 +14,21 @@ const routes = [
     name: 'AddDevice',
     component: () => import('@/views/AddDevice.vue')
   },
+  {
+    path: '/scan-device/:id',
+    name: 'ScanDevice',
+    component: () => import('@/views/ScanDevice.vue')
+  },
+  {
+    path: '/send-chat',
+    name: 'SendChat',
+    component: () => import('@/views/SendChat.vue')
+  },
+  {
+    path: '/send-brodcast',
+    name: 'SendBrodcast',
+    component: () => import('@/views/SendBrodcast.vue')
+  },
 ]
 
 const router = new VueRouter({

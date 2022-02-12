@@ -1,9 +1,8 @@
 <template>
   <div class="home">
-    <router-link to="/add-device" class="btn btn-primary mb-2">Add Device</router-link>
-    <router-link to="/add-device" class="btn btn-warning mb-2">Device List</router-link>
-    <router-link to="/add-device" class="btn btn-success mb-2">Send Chat</router-link>
-    <router-link to="/add-device" class="btn btn-info mb-2">Send Brodcast</router-link>
+    <router-link to="/add-device" class="btn btn-primary mb-2">Device List</router-link>
+    <router-link to="/send-chat" class="btn btn-success mb-2">Send Chat</router-link>
+    <router-link to="/send-brodcast" class="btn btn-info mb-2">Send Brodcast</router-link>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <div class="container mt-3">
 			<router-link to="/" class="btn btn-primary">Home</router-link>
 
-      <h1 class="mb-5">Send Chat</h1>
+      <h1 class="mb-5">Send Brodcast to all contact in database</h1>
 
       <form @submit.prevent="sendMessage">
         <div class="form-floating mb-2">
@@ -12,11 +12,6 @@
             <option v-for="device in devices" :key="device.id" :value="device.id">{{ device.name }}</option>
           </select>
           <label for="floatingSelect">Select Device</label>
-        </div>
-
-        <div class="form-floating mb-2">
-          <input type="number" class="form-control" id="floatingText" placeholder="Number" v-model="formData.number">
-          <label for="floatingText">Number</label>
         </div>
 
         <div class="form-floating mb-2">
@@ -38,7 +33,6 @@ export default {
     return {
       devices: {},
       formData: {
-        number: '',
         message: '',
         id: ''
       }
@@ -46,7 +40,7 @@ export default {
   },
   methods: {
     sendMessage() {
-      axios.post(`whatsapp/chat/send`, this.formData)
+      axios.post(`whatsapp/brodcast/send`, this.formData)
         .then(res => {
           console.log(res.data);
           this.clearForm();
@@ -59,7 +53,6 @@ export default {
 				})
 		},
     clearForm() {
-      this.formData.number = '';
       this.formData.message = '';
       this.formData.id = '';
     }

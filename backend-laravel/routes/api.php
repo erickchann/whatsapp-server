@@ -20,9 +20,11 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(['prefix' => 'wahatsapp'], function () {
+Route::group(['prefix' => 'whatsapp'], function () {
     Route::post('session/add', [BaileysController::class, 'createNewSession']);
     Route::post('chat/send', [BaileysController::class, 'sendMessage']);
+    Route::post('brodcast/send', [BaileysController::class, 'sendBrodcast']);
 });
 
 Route::apiResource('device', DeviceController::class);
+Route::post('device/update-status', [DeviceController::class, 'updateStatus']);

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Device;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class DeviceController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,17 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        $data = Device::all();
+        //
+    }
 
-        return response()->json($data, 200);
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -28,22 +34,7 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'number' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['message' => 'Invalid Field'], 422);
-        }
-
-        Device::create([
-            'name' => $request->name,
-            'number' => $request->number,
-            'status' => 'Not Connected'
-        ]);
-
-        return response()->json(['message' => 'Success'], 200);
+        //
     }
 
     /**
@@ -53,6 +44,17 @@ class DeviceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
@@ -75,15 +77,8 @@ class DeviceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Device $device)
+    public function destroy($id)
     {
-        $device->delete();
-
-        return response()->json(['message' => 'Success'], 200);
-    }
-
-    public function updateStatus(Request $request)
-    {
-        Device::find($request->id)->update(['status' => 'Connected']);
+        //
     }
 }

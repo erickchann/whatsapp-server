@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Device;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -34,6 +36,25 @@ class BaileysController extends Controller
             'receiver' => $number,
             'message' => $message
         ]);
+
+        $res = json_decode($response->getBody());
+
+        return $res;
+    }
+
+    public function sendBrodcast(Request $request)
+    {
+        $message = $request->message;
+        $id = $request->id;
+
+        $numbers = Contact::all();
+
+        foreach ($numbers as $number) {
+            $response = Http::post(env('URL_WA_SERVER') . '/chat/send?id=' . $id, [
+                'receiver' => $number->number,
+                'message' => $message
+            ]);
+        }
 
         $res = json_decode($response->getBody());
 

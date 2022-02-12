@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container mt-3">
+			<router-link to="/" class="btn btn-primary">Home</router-link>
+
       <h1 class="mb-5">Device Lists</h1>
 
 			<form @submit.prevent="addDevice" class="mb-4">
@@ -37,7 +39,7 @@
             <td>{{ device.status }}</td>
             <td>
 							<button type="button" class="btn btn-sm btn-danger" @click="deleteDevice(device.id)">Del</button>
-							<button type="button" class="btn btn-sm btn-primary">Scan</button>
+							<router-link v-if="device.status != 'Connected'" :to="`scan-device/${device.id}`" class="btn btn-sm btn-primary">Scan</router-link>
 						</td>
           </tr>
         </tbody>
