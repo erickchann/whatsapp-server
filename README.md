@@ -61,7 +61,7 @@ Simple RESTful WhatsApp API by [@ookamiiixd/baileys-api](https://github.com/ooka
 
 ### Backend API DOCs
 
-The API documentation is available online at [here](https://documenter.getpostman.com/view/18988925/UVRHiNne). You can also import the **Postman Collection File** `(postman_collection.json)` into your Postman App alternatively.
+The API documentation is available online at [here](https://documenter.getpostman.com/view/18988925/UVeNni36). You can also import the **Postman Collection File** `(postman_collection.json)` into your Postman App alternatively.
 
 The server will respond in JSON format:
 
