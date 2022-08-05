@@ -1,11 +1,14 @@
 # Baileys Restful API with Laravel
+
 An implementation of [@adiwajshing/Baileys](https://github.com/adiwajshing/Baileys) as a simple RESTful API service with multiple device support.
 
 ## Credits
+
 1. Framework : Laravel 8 & VueJs 2
 2. API Server : [@ookamiiixd/baileys-api](https://github.com/ookamiiixd/baileys-api)
 
 ## Frontend Vue Installation
+
 1. Enter to the backend project directory `cd frontend-vue`.
 2. Execute `npm i` to install the dependencies.
 3. You can start the app by executing `npm run serve`
@@ -14,31 +17,40 @@ An implementation of [@adiwajshing/Baileys](https://github.com/adiwajshing/Baile
 ## Backend Laravel Installation
 
 1. First clone or download this repository:
+
 ```bash
 git clone https://github.com/erickchann/whatsapp-server.git
 ```
+
 2. Enter directory project `cd backend-laravel`
 3. Execute `composer install` to install the dependencies.
 4. Setting the database configuration, rename `.env.example` to `.env` and open file at project root directory or execute `cp .env.example .env`
+
 ```bash
 DB_DATABASE=**your_db_name**
 DB_USERNAME=**your_db_user**
 DB_PASSWORD=**password**
 ```
+
 5. Setting the URL backend server configuration, open `.env` file at project root directory
+
 ```bash
 URL_WA_SERVER=http://localhost:8000
 ```
+
 6. Run the following command at the terminal:
+
 ```bash
 php artisan migrate:fresh --seed
 ```
+
 7. Run laravel
+
 ```bash
 php artisan serve --port=3000
 ```
 
-## Backend Express Installation 
+## Backend Express Installation
 
 Simple RESTful WhatsApp API by [@ookamiiixd/baileys-api](https://github.com/ookamiiixd/baileys-api) .
 
@@ -53,7 +65,7 @@ The API documentation is available online at [here](https://documenter.getpostma
 
 The server will respond in JSON format:
 
-``` javascript
+```javascript
 {
     success: true|false, // bool
     message: "", // string
@@ -62,10 +74,6 @@ The server will respond in JSON format:
 ```
 
 ### Features
-- [x] Send chat
-- [x] Send brodcast
-- [ ] Send chat one to many (in development)
-- [ ] Send chat many to one (in development)
-- [ ] Send chat many to many (in development)
-- [ ] Send chat to group (Soon)
-- [ ] Get chat Conversation (Soon)
+
+-   [x] Send chat
+-   [x] Send brodcast
