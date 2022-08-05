@@ -1,7 +1,5 @@
 # Baileys Restful API with Laravel
 
-An implementation of [@adiwajshing/Baileys](https://github.com/adiwajshing/Baileys) as a simple RESTful API service with multiple device support.
-
 ## Credits
 
 1. Framework : Laravel 8 & VueJs 2
